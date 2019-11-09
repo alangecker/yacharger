@@ -1,0 +1,386 @@
+EESchema Schematic File Version 4
+LIBS:charger2-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 15
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Sheet
+S 7450 1050 550  800 
+U 5DC581FA
+F0 "Battery" 50
+F1 "Battery.sch" 50
+F2 "CE" I L 7450 1500 50 
+F3 "CHRG" O L 7450 1750 50 
+F4 "DE" I L 7450 1600 50 
+F5 "VB" O L 7450 1200 50 
+F6 "VD" O L 7450 1300 50 
+F7 "L+" O R 8000 1200 50 
+F8 "L-" O R 8000 1300 50 
+$EndSheet
+$Comp
+L Interface_Expansion:MCP23017_SS U2
+U 1 1 5DC5AB33
+P 3600 3150
+AR Path="/5DC581CC/5DC5AB33" Ref="U2"  Part="1" 
+AR Path="/5DC82B0A/5DC5AB33" Ref="U12"  Part="1" 
+AR Path="/5DE36E4E/5DC5AB33" Ref="U?"  Part="1" 
+AR Path="/5DE37049/5DC5AB33" Ref="U?"  Part="1" 
+F 0 "U12" H 3050 4350 50  0000 C CNN
+F 1 "MCP23017_SS" H 3250 4250 50  0000 C CNN
+F 2 "Package_SO:SSOP-28_5.3x10.2mm_P0.65mm" H 3800 2150 50  0001 L CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf" H 3800 2050 50  0001 L CNN
+	1    3600 3150
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 7450 2200 550  800 
+U 5DC5D939
+F0 "sheet5DC5D930" 50
+F1 "Battery.sch" 50
+F2 "CE" I L 7450 2650 50 
+F3 "CHRG" O L 7450 2900 50 
+F4 "DE" I L 7450 2750 50 
+F5 "VB" O L 7450 2350 50 
+F6 "VD" O L 7450 2450 50 
+F7 "L+" O R 8000 2350 50 
+F8 "L-" O R 8000 2450 50 
+$EndSheet
+$Sheet
+S 7450 3350 550  800 
+U 5DC5D9F3
+F0 "sheet5DC5D9EA" 50
+F1 "Battery.sch" 50
+F2 "CE" I L 7450 3800 50 
+F3 "CHRG" O L 7450 4050 50 
+F4 "DE" I L 7450 3900 50 
+F5 "VB" O L 7450 3500 50 
+F6 "VD" O L 7450 3600 50 
+F7 "L+" O R 8000 3500 50 
+F8 "L-" O R 8000 3600 50 
+$EndSheet
+$Sheet
+S 7450 4500 550  800 
+U 5DC5DB65
+F0 "sheet5DC5DB5C" 50
+F1 "Battery.sch" 50
+F2 "CE" I L 7450 4950 50 
+F3 "CHRG" O L 7450 5200 50 
+F4 "DE" I L 7450 5050 50 
+F5 "VB" O L 7450 4650 50 
+F6 "VD" O L 7450 4750 50 
+F7 "L+" O R 8000 4650 50 
+F8 "L-" O R 8000 4750 50 
+$EndSheet
+Wire Wire Line
+	4300 2350 6600 2350
+Wire Wire Line
+	6600 2350 6600 1500
+Wire Wire Line
+	6600 1500 7450 1500
+Wire Wire Line
+	7450 1600 6700 1600
+Wire Wire Line
+	6700 1600 6700 2450
+Wire Wire Line
+	6700 2450 4300 2450
+Wire Wire Line
+	7450 1750 6800 1750
+Wire Wire Line
+	6800 1750 6800 2550
+Wire Wire Line
+	6800 2550 4300 2550
+Wire Wire Line
+	7450 2650 4300 2650
+Wire Wire Line
+	4300 2750 7450 2750
+Wire Wire Line
+	7450 2900 7050 2900
+Wire Wire Line
+	7050 2900 7050 2850
+Wire Wire Line
+	7050 2850 4300 2850
+Wire Wire Line
+	7050 2950 7050 3800
+Wire Wire Line
+	7450 3900 7000 3900
+Wire Wire Line
+	7000 3900 7000 3050
+Wire Wire Line
+	6700 4950 7450 4950
+Wire Wire Line
+	7450 5050 6550 5050
+Wire Wire Line
+	6550 5050 6550 3450
+Wire Wire Line
+	4300 3550 6450 3550
+Wire Wire Line
+	6450 5200 7450 5200
+$Comp
+L 4xxx:4052 U5
+U 1 1 5DC60E58
+P 5600 4850
+AR Path="/5DC581CC/5DC60E58" Ref="U5"  Part="1" 
+AR Path="/5DC82B0A/5DC60E58" Ref="U15"  Part="1" 
+AR Path="/5DE36E4E/5DC60E58" Ref="U?"  Part="1" 
+AR Path="/5DE37049/5DC60E58" Ref="U?"  Part="1" 
+F 0 "U15" H 5850 5800 50  0000 C CNN
+F 1 "4052" H 5850 5700 50  0000 C CNN
+F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 5600 4850 50  0001 C CNN
+F 3 "http://www.intersil.com/content/dam/Intersil/documents/cd40/cd4051bms-52bms-53bms.pdf" H 5600 4850 50  0001 C CNN
+	1    5600 4850
+	1    0    0    -1  
+$EndComp
+Text Label 7350 1200 2    50   ~ 0
+X0
+Wire Wire Line
+	7350 1200 7450 1200
+Text Label 7350 1300 2    50   ~ 0
+Y0
+Wire Wire Line
+	7350 1300 7450 1300
+Text Label 7350 2350 2    50   ~ 0
+X1
+Wire Wire Line
+	7350 2350 7450 2350
+Text Label 7350 2450 2    50   ~ 0
+Y1
+Wire Wire Line
+	7350 2450 7450 2450
+Text Label 7350 3500 2    50   ~ 0
+X2
+Wire Wire Line
+	7350 3500 7450 3500
+Text Label 7350 3600 2    50   ~ 0
+Y2
+Wire Wire Line
+	7350 3600 7450 3600
+Text Label 7350 4650 2    50   ~ 0
+X3
+Wire Wire Line
+	7350 4650 7450 4650
+Text Label 7350 4750 2    50   ~ 0
+Y3
+Wire Wire Line
+	7350 4750 7450 4750
+Wire Wire Line
+	4900 5350 5100 5350
+Text Label 5100 4250 2    50   ~ 0
+X0
+Text Label 5100 4350 2    50   ~ 0
+X1
+Text Label 5100 4450 2    50   ~ 0
+X2
+Text Label 5100 4550 2    50   ~ 0
+X3
+Text Label 5100 4750 2    50   ~ 0
+Y1
+Text Label 5100 4850 2    50   ~ 0
+Y2
+Text Label 5100 4950 2    50   ~ 0
+Y3
+Text Label 5100 4650 2    50   ~ 0
+Y0
+Wire Wire Line
+	4300 3750 4800 3750
+Wire Wire Line
+	4800 5450 5100 5450
+$Comp
+L power:GND #PWR0108
+U 1 1 5DC72102
+P 2900 3750
+AR Path="/5DC581CC/5DC72102" Ref="#PWR0108"  Part="1" 
+AR Path="/5DC82B0A/5DC72102" Ref="#PWR0150"  Part="1" 
+AR Path="/5DE36E4E/5DC72102" Ref="#PWR?"  Part="1" 
+AR Path="/5DE37049/5DC72102" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0150" H 2900 3500 50  0001 C CNN
+F 1 "GND" V 2905 3622 50  0000 R CNN
+F 2 "" H 2900 3750 50  0001 C CNN
+F 3 "" H 2900 3750 50  0001 C CNN
+	1    2900 3750
+	0    1    1    0   
+$EndComp
+Text HLabel 2900 3850 0    50   Input ~ 0
+A1
+Text HLabel 2900 3950 0    50   Input ~ 0
+A0
+$Comp
+L power:+5V #PWR0109
+U 1 1 5DC72E27
+P 2900 3250
+AR Path="/5DC581CC/5DC72E27" Ref="#PWR0109"  Part="1" 
+AR Path="/5DC82B0A/5DC72E27" Ref="#PWR0151"  Part="1" 
+AR Path="/5DE36E4E/5DC72E27" Ref="#PWR?"  Part="1" 
+AR Path="/5DE37049/5DC72E27" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0151" H 2900 3100 50  0001 C CNN
+F 1 "+5V" V 2915 3378 50  0000 L CNN
+F 2 "" H 2900 3250 50  0001 C CNN
+F 3 "" H 2900 3250 50  0001 C CNN
+	1    2900 3250
+	0    -1   -1   0   
+$EndComp
+NoConn ~ 2900 3050
+NoConn ~ 2900 2950
+Text HLabel 2900 2350 0    50   Input ~ 0
+SDA
+Text HLabel 2900 2450 0    50   Input ~ 0
+SCK
+$Comp
+L power:+5V #PWR0110
+U 1 1 5DC74DCC
+P 3600 2050
+AR Path="/5DC581CC/5DC74DCC" Ref="#PWR0110"  Part="1" 
+AR Path="/5DC82B0A/5DC74DCC" Ref="#PWR0152"  Part="1" 
+AR Path="/5DE36E4E/5DC74DCC" Ref="#PWR?"  Part="1" 
+AR Path="/5DE37049/5DC74DCC" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0152" H 3600 1900 50  0001 C CNN
+F 1 "+5V" H 3600 2200 50  0000 C CNN
+F 2 "" H 3600 2050 50  0001 C CNN
+F 3 "" H 3600 2050 50  0001 C CNN
+	1    3600 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9350 3100 8250 3100
+Wire Wire Line
+	8250 3100 8250 2450
+Wire Wire Line
+	8250 2450 8000 2450
+Wire Wire Line
+	8000 3500 8250 3500
+Wire Wire Line
+	8250 3500 8250 3200
+Wire Wire Line
+	8250 3200 9350 3200
+Wire Wire Line
+	9350 3300 8350 3300
+Wire Wire Line
+	8350 3300 8350 3600
+Wire Wire Line
+	8350 3600 8000 3600
+Wire Wire Line
+	8000 2350 8350 2350
+Wire Wire Line
+	8350 2350 8350 3000
+Wire Wire Line
+	8350 3000 9350 3000
+Wire Wire Line
+	9350 3400 8450 3400
+Wire Wire Line
+	8450 3400 8450 4650
+Wire Wire Line
+	8450 4650 8000 4650
+Wire Wire Line
+	8000 4750 8600 4750
+Wire Wire Line
+	8600 4750 8600 3500
+Wire Wire Line
+	8600 3500 9350 3500
+Wire Wire Line
+	9350 2900 8450 2900
+Wire Wire Line
+	8450 2900 8450 1300
+Wire Wire Line
+	8450 1300 8000 1300
+Wire Wire Line
+	8000 1200 8550 1200
+Wire Wire Line
+	8550 1200 8550 2800
+Wire Wire Line
+	8550 2800 9350 2800
+Text HLabel 6100 4250 2    50   Output ~ 0
+VB
+Text HLabel 6100 4650 2    50   Output ~ 0
+VD
+$Comp
+L power:+5V #PWR0114
+U 1 1 5DCAA6F6
+P 5600 3950
+AR Path="/5DC581CC/5DCAA6F6" Ref="#PWR0114"  Part="1" 
+AR Path="/5DC82B0A/5DCAA6F6" Ref="#PWR0156"  Part="1" 
+AR Path="/5DE36E4E/5DCAA6F6" Ref="#PWR?"  Part="1" 
+AR Path="/5DE37049/5DCAA6F6" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0156" H 5600 3800 50  0001 C CNN
+F 1 "+5V" H 5600 4100 50  0000 C CNN
+F 2 "" H 5600 3950 50  0001 C CNN
+F 3 "" H 5600 3950 50  0001 C CNN
+	1    5600 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4450 3950 4300 3950
+$Comp
+L power:GND #PWR0222
+U 1 1 5E10AAB0
+P 5650 5850
+AR Path="/5DC82B0A/5E10AAB0" Ref="#PWR0222"  Part="1" 
+AR Path="/5DC581CC/5E10AAB0" Ref="#PWR0221"  Part="1" 
+F 0 "#PWR0222" H 5650 5600 50  0001 C CNN
+F 1 "GND" H 5655 5677 50  0000 C CNN
+F 2 "" H 5650 5850 50  0001 C CNN
+F 3 "" H 5650 5850 50  0001 C CNN
+	1    5650 5850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 5750 5600 5850
+Wire Wire Line
+	5600 5850 5650 5850
+Wire Wire Line
+	5700 5850 5700 5750
+Connection ~ 5650 5850
+Wire Wire Line
+	5650 5850 5700 5850
+Wire Wire Line
+	4800 3750 4800 5450
+Wire Wire Line
+	4900 3650 4900 5350
+Wire Wire Line
+	4300 3650 4900 3650
+Wire Wire Line
+	6450 3550 6450 5200
+Wire Wire Line
+	6700 3350 6700 4950
+Wire Wire Line
+	4300 3450 6550 3450
+Wire Wire Line
+	4300 3350 6700 3350
+Wire Wire Line
+	7050 3800 7450 3800
+Wire Wire Line
+	4300 3050 7000 3050
+Wire Wire Line
+	4300 2950 7050 2950
+Wire Wire Line
+	7450 4050 6950 4050
+Wire Wire Line
+	6950 4050 6950 3250
+Wire Wire Line
+	6950 3250 4300 3250
+NoConn ~ 4300 3850
+$Comp
+L Connector_Generic:Conn_01x08 J2
+U 1 1 5DC76FC9
+P 9550 3100
+AR Path="/5DC581CC/5DC76FC9" Ref="J2"  Part="1" 
+AR Path="/5DC82B0A/5DC76FC9" Ref="J3"  Part="1" 
+AR Path="/5DE36E4E/5DC76FC9" Ref="J?"  Part="1" 
+AR Path="/5DE37049/5DC76FC9" Ref="J?"  Part="1" 
+F 0 "J3" H 9630 3092 50  0000 L CNN
+F 1 "Conn_01x08" H 9630 3001 50  0000 L CNN
+F 2 "Connector_JST:JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical" H 9550 3100 50  0001 C CNN
+F 3 "~" H 9550 3100 50  0001 C CNN
+	1    9550 3100
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4450 3950
+$EndSCHEMATC
