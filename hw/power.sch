@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:charger2-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -125,7 +124,7 @@ L Device:R_Small R68
 U 1 1 5DC989BC
 P 4600 2050
 F 0 "R68" V 4404 2050 50  0000 C CNN
-F 1 "4" V 4495 2050 50  0000 C CNN
+F 1 "22" V 4495 2050 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4600 2050 50  0001 C CNN
 F 3 "~" H 4600 2050 50  0001 C CNN
 	1    4600 2050
@@ -188,14 +187,7 @@ F 3 "~" V 3450 1750 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	4500 2050 4200 2050
-Wire Wire Line
-	4850 1750 4850 2050
-Wire Wire Line
-	4850 1600 4850 1750
-Connection ~ 4850 1750
-Wire Wire Line
-	4850 1750 4400 1750
+	4500 2050 4400 2050
 Wire Wire Line
 	4200 1750 3750 1750
 $Comp
@@ -209,4 +201,11 @@ F 3 "~" H 4300 1750 50  0001 C CNN
 	1    4300 1750
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	4850 1600 4850 2050
+Wire Wire Line
+	4400 1750 4400 2050
+Connection ~ 4400 2050
+Wire Wire Line
+	4400 2050 4200 2050
 $EndSCHEMATC
