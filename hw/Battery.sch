@@ -871,7 +871,7 @@ Wire Wire Line
 Wire Wire Line
 	7950 3100 7950 3200
 $Comp
-L charger2-rescue:TP4056-TP4056 U?
+L charger2-rescue:TP4056-TP4056-charger2-rescue U?
 U 1 1 5DD277B2
 P 5100 2700
 AR Path="/5DD277B2" Ref="U?"  Part="1" 

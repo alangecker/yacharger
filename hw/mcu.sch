@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 14 15
+Sheet 15 15
 Title ""
 Date ""
 Rev ""
@@ -262,7 +262,7 @@ Wire Wire Line
 Wire Wire Line
 	3150 3750 3550 3750
 $Comp
-L charger2-rescue:Arduino_Nano_Socket-Arduino XA1
+L charger2-rescue:Arduino_Nano_Socket-Arduino-charger2-rescue XA1
 U 1 1 5DFF8FDC
 P 4850 4050
 AR Path="/5DFF8FDC" Ref="XA1"  Part="1" 

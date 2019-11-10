@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 15
+Sheet 7 15
 Title ""
 Date ""
 Rev ""
@@ -27,21 +27,6 @@ F6 "VD" O L 7450 1300 50
 F7 "L+" O R 8000 1200 50 
 F8 "L-" O R 8000 1300 50 
 $EndSheet
-$Comp
-L Interface_Expansion:MCP23017_SS U2
-U 1 1 5DC5AB33
-P 3600 3150
-AR Path="/5DC581CC/5DC5AB33" Ref="U2"  Part="1" 
-AR Path="/5DC82B0A/5DC5AB33" Ref="U12"  Part="1" 
-AR Path="/5DE36E4E/5DC5AB33" Ref="U?"  Part="1" 
-AR Path="/5DE37049/5DC5AB33" Ref="U?"  Part="1" 
-F 0 "U12" H 3050 4350 50  0000 C CNN
-F 1 "MCP23017_SS" H 3250 4250 50  0000 C CNN
-F 2 "Package_SO:SSOP-28_5.3x10.2mm_P0.65mm" H 3800 2150 50  0001 L CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf" H 3800 2050 50  0001 L CNN
-	1    3600 3150
-	1    0    0    -1  
-$EndComp
 $Sheet
 S 7450 2200 550  800 
 U 5DC5D939
@@ -125,21 +110,6 @@ Wire Wire Line
 	4300 3550 6450 3550
 Wire Wire Line
 	6450 5200 7450 5200
-$Comp
-L 4xxx:4052 U5
-U 1 1 5DC60E58
-P 5600 4850
-AR Path="/5DC581CC/5DC60E58" Ref="U5"  Part="1" 
-AR Path="/5DC82B0A/5DC60E58" Ref="U15"  Part="1" 
-AR Path="/5DE36E4E/5DC60E58" Ref="U?"  Part="1" 
-AR Path="/5DE37049/5DC60E58" Ref="U?"  Part="1" 
-F 0 "U15" H 5850 5800 50  0000 C CNN
-F 1 "4052" H 5850 5700 50  0000 C CNN
-F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 5600 4850 50  0001 C CNN
-F 3 "http://www.intersil.com/content/dam/Intersil/documents/cd40/cd4051bms-52bms-53bms.pdf" H 5600 4850 50  0001 C CNN
-	1    5600 4850
-	1    0    0    -1  
-$EndComp
 Text Label 7350 1200 2    50   ~ 0
 X0
 Wire Wire Line
@@ -172,8 +142,6 @@ Text Label 7350 4750 2    50   ~ 0
 Y3
 Wire Wire Line
 	7350 4750 7450 4750
-Wire Wire Line
-	4900 5350 5100 5350
 Text Label 5100 4250 2    50   ~ 0
 X0
 Text Label 5100 4350 2    50   ~ 0
@@ -192,8 +160,6 @@ Text Label 5100 4650 2    50   ~ 0
 Y0
 Wire Wire Line
 	4300 3750 4800 3750
-Wire Wire Line
-	4800 5450 5100 5450
 $Comp
 L power:GND #PWR0108
 U 1 1 5DC72102
@@ -234,21 +200,6 @@ Text HLabel 2900 2350 0    50   Input ~ 0
 SDA
 Text HLabel 2900 2450 0    50   Input ~ 0
 SCK
-$Comp
-L power:+5V #PWR0110
-U 1 1 5DC74DCC
-P 3600 2050
-AR Path="/5DC581CC/5DC74DCC" Ref="#PWR0110"  Part="1" 
-AR Path="/5DC82B0A/5DC74DCC" Ref="#PWR0152"  Part="1" 
-AR Path="/5DE36E4E/5DC74DCC" Ref="#PWR?"  Part="1" 
-AR Path="/5DE37049/5DC74DCC" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0152" H 3600 1900 50  0001 C CNN
-F 1 "+5V" H 3600 2200 50  0000 C CNN
-F 2 "" H 3600 2050 50  0001 C CNN
-F 3 "" H 3600 2050 50  0001 C CNN
-	1    3600 2050
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9350 3100 8250 3100
 Wire Wire Line
@@ -301,21 +252,6 @@ Text HLabel 6100 4250 2    50   Output ~ 0
 VB
 Text HLabel 6100 4650 2    50   Output ~ 0
 VD
-$Comp
-L power:+5V #PWR0114
-U 1 1 5DCAA6F6
-P 5600 3950
-AR Path="/5DC581CC/5DCAA6F6" Ref="#PWR0114"  Part="1" 
-AR Path="/5DC82B0A/5DCAA6F6" Ref="#PWR0156"  Part="1" 
-AR Path="/5DE36E4E/5DCAA6F6" Ref="#PWR?"  Part="1" 
-AR Path="/5DE37049/5DCAA6F6" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0156" H 5600 3800 50  0001 C CNN
-F 1 "+5V" H 5600 4100 50  0000 C CNN
-F 2 "" H 5600 3950 50  0001 C CNN
-F 3 "" H 5600 3950 50  0001 C CNN
-	1    5600 3950
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4450 3950 4300 3950
 $Comp
@@ -383,4 +319,101 @@ F 3 "~" H 9550 3100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 NoConn ~ 4450 3950
+Wire Wire Line
+	3600 2050 3600 1900
+$Comp
+L power:GND #PWR0103
+U 1 1 5DCA0037
+P 3850 2100
+AR Path="/5DC581CC/5DCA0037" Ref="#PWR0103"  Part="1" 
+AR Path="/5DC82B0A/5DCA0037" Ref="#PWR0114"  Part="1" 
+F 0 "#PWR0114" H 3850 1850 50  0001 C CNN
+F 1 "GND" H 4000 2050 50  0000 C CNN
+F 2 "" H 3850 2100 50  0001 C CNN
+F 3 "" H 3850 2100 50  0001 C CNN
+	1    3850 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3700 1900 3850 1900
+Connection ~ 3700 1900
+Wire Wire Line
+	3700 1800 3700 1900
+Wire Wire Line
+	3600 1900 3700 1900
+$Comp
+L Device:C_Small C25
+U 1 1 5DC9B25F
+P 3850 2000
+AR Path="/5DC581CC/5DC9B25F" Ref="C25"  Part="1" 
+AR Path="/5DC82B0A/5DC9B25F" Ref="C27"  Part="1" 
+F 0 "C27" H 3942 2046 50  0000 L CNN
+F 1 "100n" H 3942 1955 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3850 2000 50  0001 C CNN
+F 3 "~" H 3850 2000 50  0001 C CNN
+	1    3850 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0110
+U 1 1 5DC74DCC
+P 3700 1800
+AR Path="/5DC581CC/5DC74DCC" Ref="#PWR0110"  Part="1" 
+AR Path="/5DC82B0A/5DC74DCC" Ref="#PWR0152"  Part="1" 
+AR Path="/5DE36E4E/5DC74DCC" Ref="#PWR?"  Part="1" 
+AR Path="/5DE37049/5DC74DCC" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0152" H 3700 1650 50  0001 C CNN
+F 1 "+5V" H 3700 1950 50  0000 C CNN
+F 2 "" H 3700 1800 50  0001 C CNN
+F 3 "" H 3700 1800 50  0001 C CNN
+	1    3700 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Interface_Expansion:MCP23017_SS U2
+U 1 1 5DC5AB33
+P 3600 3150
+AR Path="/5DC581CC/5DC5AB33" Ref="U2"  Part="1" 
+AR Path="/5DC82B0A/5DC5AB33" Ref="U12"  Part="1" 
+AR Path="/5DE36E4E/5DC5AB33" Ref="U?"  Part="1" 
+AR Path="/5DE37049/5DC5AB33" Ref="U?"  Part="1" 
+F 0 "U12" H 3050 4350 50  0000 C CNN
+F 1 "MCP23017_SS" H 3250 4250 50  0000 C CNN
+F 2 "Package_SO:SSOP-28_5.3x10.2mm_P0.65mm" H 3800 2150 50  0001 L CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf" H 3800 2050 50  0001 L CNN
+	1    3600 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 5450 5100 5450
+Wire Wire Line
+	4900 5350 5100 5350
+$Comp
+L 4xxx:4052 U5
+U 1 1 5DC60E58
+P 5600 4850
+AR Path="/5DC581CC/5DC60E58" Ref="U5"  Part="1" 
+AR Path="/5DC82B0A/5DC60E58" Ref="U15"  Part="1" 
+AR Path="/5DE36E4E/5DC60E58" Ref="U?"  Part="1" 
+AR Path="/5DE37049/5DC60E58" Ref="U?"  Part="1" 
+F 0 "U15" H 5450 5750 50  0000 C CNN
+F 1 "4052" H 5400 5650 50  0000 C CNN
+F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 5600 4850 50  0001 C CNN
+F 3 "http://www.intersil.com/content/dam/Intersil/documents/cd40/cd4051bms-52bms-53bms.pdf" H 5600 4850 50  0001 C CNN
+	1    5600 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5VA #PWR0101
+U 1 1 5DC92534
+P 5600 3950
+AR Path="/5DC581CC/5DC92534" Ref="#PWR0101"  Part="1" 
+AR Path="/5DC82B0A/5DC92534" Ref="#PWR0102"  Part="1" 
+F 0 "#PWR0102" H 5600 3800 50  0001 C CNN
+F 1 "+5VA" H 5615 4123 50  0000 C CNN
+F 2 "" H 5600 3950 50  0001 C CNN
+F 3 "" H 5600 3950 50  0001 C CNN
+	1    5600 3950
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

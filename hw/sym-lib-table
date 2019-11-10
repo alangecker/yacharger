@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name display)(type Legacy)(uri ${KIPRJMOD}/display.lib)(options "")(descr ""))
+  (lib (name charger2-rescue)(type Legacy)(uri ${KIPRJMOD}/charger2-rescue.lib)(options "")(descr ""))
 )

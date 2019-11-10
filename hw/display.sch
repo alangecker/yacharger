@@ -15,19 +15,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L 4xxx:4050 U?
-U 7 1 5DDDAB74
-P 3250 2550
-AR Path="/5DDDAB74" Ref="U?"  Part="7" 
-AR Path="/5DDD0CFA/5DDDAB74" Ref="U1"  Part="7" 
-F 0 "U1" H 3480 2596 50  0000 L CNN
-F 1 "4050" H 3480 2505 50  0000 L CNN
-F 2 "Package_SO:SOP-16_4.55x10.3mm_P1.27mm" H 3250 2550 50  0001 C CNN
-F 3 "http://www.intersil.com/content/dam/intersil/documents/cd40/cd4050bms.pdf" H 3250 2550 50  0001 C CNN
-	7    3250 2550
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+3.3V #PWR?
 U 1 1 5DDDAB7A
 P 3450 1950
@@ -47,7 +34,7 @@ P 2800 3950
 AR Path="/5DDE61EE" Ref="U?"  Part="1" 
 AR Path="/5DDD0CFA/5DDE61EE" Ref="U1"  Part="1" 
 F 0 "U1" H 2800 4267 50  0000 C CNN
-F 1 "4050" H 2800 4176 50  0000 C CNN
+F 1 "74HC4050" H 2800 4176 50  0000 C CNN
 F 2 "Package_SO:SOP-16_4.55x10.3mm_P1.27mm" H 2800 3950 50  0001 C CNN
 F 3 "http://www.intersil.com/content/dam/intersil/documents/cd40/cd4050bms.pdf" H 2800 3950 50  0001 C CNN
 	1    2800 3950
@@ -60,7 +47,7 @@ P 3200 4150
 AR Path="/5DDE61F4" Ref="U?"  Part="2" 
 AR Path="/5DDD0CFA/5DDE61F4" Ref="U1"  Part="2" 
 F 0 "U1" H 3200 4467 50  0000 C CNN
-F 1 "4050" H 3200 4376 50  0000 C CNN
+F 1 "74HC4050" H 3200 4376 50  0000 C CNN
 F 2 "Package_SO:SOP-16_4.55x10.3mm_P1.27mm" H 3200 4150 50  0001 C CNN
 F 3 "http://www.intersil.com/content/dam/intersil/documents/cd40/cd4050bms.pdf" H 3200 4150 50  0001 C CNN
 	2    3200 4150
@@ -73,7 +60,7 @@ P 2750 4350
 AR Path="/5DDE61FA" Ref="U?"  Part="3" 
 AR Path="/5DDD0CFA/5DDE61FA" Ref="U1"  Part="3" 
 F 0 "U1" H 2750 4667 50  0000 C CNN
-F 1 "4050" H 2750 4576 50  0000 C CNN
+F 1 "74HC4050" H 2750 4576 50  0000 C CNN
 F 2 "Package_SO:SOP-16_4.55x10.3mm_P1.27mm" H 2750 4350 50  0001 C CNN
 F 3 "http://www.intersil.com/content/dam/intersil/documents/cd40/cd4050bms.pdf" H 2750 4350 50  0001 C CNN
 	3    2750 4350
@@ -116,7 +103,7 @@ P 3200 4550
 AR Path="/5DED06FC" Ref="U?"  Part="3" 
 AR Path="/5DDD0CFA/5DED06FC" Ref="U1"  Part="4" 
 F 0 "U1" H 3200 4867 50  0000 C CNN
-F 1 "4050" H 3200 4776 50  0000 C CNN
+F 1 "74HC4050" H 3200 4776 50  0000 C CNN
 F 2 "Package_SO:SOP-16_4.55x10.3mm_P1.27mm" H 3200 4550 50  0001 C CNN
 F 3 "http://www.intersil.com/content/dam/intersil/documents/cd40/cd4050bms.pdf" H 3200 4550 50  0001 C CNN
 	4    3200 4550
@@ -154,7 +141,7 @@ P 2750 4800
 AR Path="/5DC49FA3" Ref="U?"  Part="3" 
 AR Path="/5DDD0CFA/5DC49FA3" Ref="U1"  Part="5" 
 F 0 "U1" H 2750 5117 50  0000 C CNN
-F 1 "4050" H 2750 5026 50  0000 C CNN
+F 1 "74HC4050" H 2750 5026 50  0000 C CNN
 F 2 "Package_SO:SOP-16_4.55x10.3mm_P1.27mm" H 2750 4800 50  0001 C CNN
 F 3 "http://www.intersil.com/content/dam/intersil/documents/cd40/cd4050bms.pdf" H 2750 4800 50  0001 C CNN
 	5    2750 4800
@@ -184,7 +171,7 @@ P 2950 5400
 AR Path="/5DF87B81" Ref="U?"  Part="3" 
 AR Path="/5DDD0CFA/5DF87B81" Ref="U1"  Part="6" 
 F 0 "U1" H 2950 5717 50  0000 C CNN
-F 1 "4050" H 2950 5626 50  0000 C CNN
+F 1 "74HC4050" H 2950 5626 50  0000 C CNN
 F 2 "Package_SO:SOP-16_4.55x10.3mm_P1.27mm" H 2950 5400 50  0001 C CNN
 F 3 "http://www.intersil.com/content/dam/intersil/documents/cd40/cd4050bms.pdf" H 2950 5400 50  0001 C CNN
 	6    2950 5400
@@ -213,7 +200,7 @@ P 7300 4100
 AR Path="/5DDE61E8" Ref="U?"  Part="1" 
 AR Path="/5DDD0CFA/5DDE61E8" Ref="U3"  Part="1" 
 F 0 "U3" H 7325 4615 50  0000 C CNN
-F 1 "MSP2202_2.2inch-display" H 7325 4524 50  0000 C CNN
+F 1 "2.2\" SPI display " H 7325 4524 50  0000 C CNN
 F 2 "display:MSP2202_2.2inch_SPI" H 7300 4100 50  0001 C CNN
 F 3 "" H 7300 4100 50  0001 C CNN
 	1    7300 4100
@@ -361,6 +348,19 @@ F 1 "GND" H 3655 2077 50  0000 C CNN
 F 2 "" H 3650 2250 50  0001 C CNN
 F 3 "" H 3650 2250 50  0001 C CNN
 	1    3650 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L 4xxx:4050 U?
+U 7 1 5DDDAB74
+P 3250 2550
+AR Path="/5DDDAB74" Ref="U?"  Part="7" 
+AR Path="/5DDD0CFA/5DDDAB74" Ref="U1"  Part="7" 
+F 0 "U1" H 3480 2596 50  0000 L CNN
+F 1 "74HC4050" H 3480 2505 50  0000 L CNN
+F 2 "Package_SO:SOP-16_4.55x10.3mm_P1.27mm" H 3250 2550 50  0001 C CNN
+F 3 "http://www.intersil.com/content/dam/intersil/documents/cd40/cd4050bms.pdf" H 3250 2550 50  0001 C CNN
+	7    3250 2550
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

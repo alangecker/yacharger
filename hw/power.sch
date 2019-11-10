@@ -87,17 +87,6 @@ Wire Wire Line
 Wire Wire Line
 	2350 1850 2100 1850
 $Comp
-L Device:Jumper_NC_Small JP4
-U 1 1 5DC9629B
-P 4300 1750
-F 0 "JP4" H 4300 1962 50  0000 C CNN
-F 1 "5VA Bridge" H 4300 1871 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 4300 1750 50  0001 C CNN
-F 3 "~" H 4300 1750 50  0001 C CNN
-	1    4300 1750
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+5VA #PWR0202
 U 1 1 5DC96561
 P 4850 1600
@@ -108,12 +97,6 @@ F 3 "" H 4850 1600 50  0001 C CNN
 	1    4850 1600
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4850 1600 4850 1750
-Wire Wire Line
-	4850 1750 4400 1750
-Wire Wire Line
-	4200 1750 3750 1750
 Connection ~ 3750 1750
 $Comp
 L Device:C_Small C17
@@ -168,13 +151,8 @@ Wire Wire Line
 Wire Wire Line
 	4000 2050 3750 2050
 Wire Wire Line
-	4500 2050 4200 2050
-Wire Wire Line
 	3750 2050 3750 1750
 Connection ~ 3750 2050
-Wire Wire Line
-	4850 1750 4850 2050
-Connection ~ 4850 1750
 Connection ~ 4850 2050
 $Comp
 L power:GND #PWR0203
@@ -203,10 +181,32 @@ L Device:D_Small D1
 U 1 1 5DDDF8DA
 P 3450 1750
 F 0 "D1" H 3450 1545 50  0000 C CNN
-F 1 "D_Small" H 3450 1636 50  0000 C CNN
-F 2 "" V 3450 1750 50  0001 C CNN
+F 1 "SS34" H 3450 1636 50  0000 C CNN
+F 2 "Diode_SMD:D_SMA" V 3450 1750 50  0001 C CNN
 F 3 "~" V 3450 1750 50  0001 C CNN
 	1    3450 1750
 	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4500 2050 4200 2050
+Wire Wire Line
+	4850 1750 4850 2050
+Wire Wire Line
+	4850 1600 4850 1750
+Connection ~ 4850 1750
+Wire Wire Line
+	4850 1750 4400 1750
+Wire Wire Line
+	4200 1750 3750 1750
+$Comp
+L Device:Jumper_NC_Small JP4
+U 1 1 5DC9629B
+P 4300 1750
+F 0 "JP4" H 4300 1962 50  0000 C CNN
+F 1 "5VA Bridge" H 4300 1871 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 4300 1750 50  0001 C CNN
+F 3 "~" H 4300 1750 50  0001 C CNN
+	1    4300 1750
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
