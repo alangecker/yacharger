@@ -8,10 +8,12 @@ struct SlotState {
     uint8_t state = STATE_WAIT;
     uint32_t cycleCount = 0;
 
+#ifdef TEMP_ENABLED
     float tempInitial;
     float tempMaximum;
     float tempCurrent;
-    
+#endif
+
     float current;
     float voltage;
     float voltageInitial;

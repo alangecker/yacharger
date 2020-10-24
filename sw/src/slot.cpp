@@ -4,11 +4,18 @@
 #define MILLISECONDS_PER_HOUR ((uint32_t)1000*60*60)
 #define RESISTANCE_OFFSET 0 // mOhm, The Drain-Source On-State Resistance of the Discharge Mosfet
 
+void slot_print(uint8_t slotNumber, char* str) {
+    Serial.print("[");
+    Serial.print(slotNumber);
+    Serial.print("] ");
+    Serial.println(str);
+}
 
 void slot_tick(uint8_t slotNumber, SlotState *state) {
     state->voltage = adc_readVoltage(slotNumber);
     
     if(state->state != STATE_WAIT && state->voltage < MIN_INITIAL_VOLTAGE) {
+        state->current = 0;
         gpio_chargeStop(slotNumber);
         gpio_dischargeStop(slotNumber);
         state->state = STATE_WAIT;
@@ -28,8 +35,10 @@ void slot_tick(uint8_t slotNumber, SlotState *state) {
         // wait a bit after battery insertion for voltage to settle
         case STATE_INSERTED_SETTLE: 
             // reset values
+#ifdef TEMP_ENABLED
             state->tempInitial = 0;
             state->tempMaximum = 0;
+#endif
             state->current = 0;
             state->chargedCharge = 0;
             state->chargedEnergy = 0;
@@ -75,7 +84,7 @@ void slot_tick(uint8_t slotNumber, SlotState *state) {
 
                 // charging done?
                 // indicated by CHRG-Pin of TP4056
-                if(state->cycleCount > 10 && !gpio_readChargingFeedback(slotNumber)) {
+                if((state->cycleCount > 10 && !gpio_readChargingFeedback(slotNumber)) || state->voltage > MAX_VOLTAGE) {
                     Serial.println("charging done");
                     gpio_chargeStop(slotNumber);
                     state->chargeEndTime = newTime;
@@ -87,6 +96,7 @@ void slot_tick(uint8_t slotNumber, SlotState *state) {
                     state->chargeEndTime = newTime;
                     state->state = STATE_FAULT;
                     state->fault = FAULT_CHARGETIMEOUT;
+                    slot_print(slotNumber, "Fault: charge timeout");
                 } else {
                     state->cycleCount++;
                 }
@@ -113,13 +123,14 @@ void slot_tick(uint8_t slotNumber, SlotState *state) {
                 float resistance = 7.5; // TODO: define individually for each resistor
 
                 state->internalResistance = (resistance * (startVoltage / state->voltage) - resistance) * 1000; // mOhm
+                Serial.print("R_i: ");
+                Serial.println(state->internalResistance);
                 if(state->internalResistance > 9999)  state->internalResistance = 9999;
                 if(state->internalResistance > MAX_RESISTANCE) {
-                    Serial.print("R_i: ");
-                    Serial.println(state->internalResistance);
 
                     state->state = STATE_FAULT;
                     state->fault = FAULT_HIGH_RESISTANCE;
+                    slot_print(slotNumber, "Fault: too high resistance");
                 } else {
                     state->state = STATE_DISCHARGE;
                     state->cycleCount = 0;
@@ -132,6 +143,7 @@ void slot_tick(uint8_t slotNumber, SlotState *state) {
                 gpio_dischargeStart(slotNumber);
                 state->dischargeStartTime = millis();
                 state->lastTime = state->dischargeStartTime;
+                state->cycleCount++;
             } else {
                 // normal discharging loop
                 state->current = adc_readCurrent(slotNumber);
@@ -139,19 +151,19 @@ void slot_tick(uint8_t slotNumber, SlotState *state) {
                 unsigned long newTime = millis();
 
                 // count charge & energy
-                state->dischargedCharge += (-state->current)*((newTime-state->lastTime)/MILLISECONDS_PER_HOUR);
-                state->dischargedEnergy += (-state->current)*state->voltage*((newTime-state->lastTime)/MILLISECONDS_PER_HOUR);
-                
-                
+                state->dischargedCharge += ((double)-state->current)*(newTime-state->lastTime)/MILLISECONDS_PER_HOUR;
+                state->dischargedEnergy += ((double)-state->current)*state->voltage*(newTime-state->lastTime)/MILLISECONDS_PER_HOUR;
+
                 state->lastTime = newTime;
 
                 if(state->voltage <= DISCHARGE_CUTOFF_VOLTAGE) {
                     gpio_dischargeStop(slotNumber);
                     state->dischargeEndTime = newTime;
 
-                    if(state->dischargedCharge < MIN_CAPACITY) {
+                    if(state->dischargedCharge*1000 < MIN_CAPACITY) {
                         state->state = STATE_FAULT;
                         state->fault = FAULT_LOW_CAPACITY;
+                        slot_print(slotNumber, "Fault: low capacity");
                     } else {
                         state->state = STATE_RECHARGE;
                     }
@@ -164,11 +176,11 @@ void slot_tick(uint8_t slotNumber, SlotState *state) {
         
 
         case STATE_RECHARGE:
-
             if(!state->cycleCount) {
                 gpio_chargeStart(slotNumber);
                 state->rechargeStartTime = millis();
                 state->lastTime = state->rechargeStartTime;
+                state->cycleCount++;
             } else {
                 // normal charging loop
                 state->current = adc_readCurrent(slotNumber);
@@ -182,14 +194,15 @@ void slot_tick(uint8_t slotNumber, SlotState *state) {
 
                 // charging done?
                 // indicated by CHRG-Pin of TP4056
-                if(state->cycleCount > 10 && !gpio_readChargingFeedback(slotNumber)) {
+                if((state->cycleCount > 10 && !gpio_readChargingFeedback(slotNumber))  || state->voltage > MAX_VOLTAGE) {
                     gpio_chargeStop(slotNumber);
                     state->rechargeEndTime = newTime;
-
-                    float efficiency = state->dischargedEnergy/state->rechargedEnergy;
+                    float efficiency = state->rechargedEnergy ? state->dischargedEnergy/state->rechargedEnergy : 1;
                     if(efficiency < MIN_EFFICIENCY) {
                         state->state = STATE_FAULT;
+                        state->state = STATE_DONE;
                         state->fault = FAULT_LOW_EFFICIENCY;
+                        slot_print(slotNumber, "Fault: low efficiency");
                     } else {
                         state->state = STATE_DONE;
                     }
@@ -201,6 +214,7 @@ void slot_tick(uint8_t slotNumber, SlotState *state) {
                     state->rechargeEndTime = newTime;
                     state->state = STATE_FAULT;
                     state->fault = FAULT_CHARGETIMEOUT;
+                    slot_print(slotNumber, "Fault: charge timeout");
                 } else {
                     state->cycleCount++;
                 }
@@ -211,7 +225,10 @@ void slot_tick(uint8_t slotNumber, SlotState *state) {
         case STATE_FAULT:
             gpio_chargeStop(slotNumber);
             gpio_dischargeStop(slotNumber);
+            break;
 
+        case STATE_DONE:
+            // do nothing
             break;
     }
 }

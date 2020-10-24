@@ -2,15 +2,6 @@
 #include "Adafruit_MCP23017.h"
 
 Adafruit_MCP23017 mcp0, mcp1;
-  
-// void setup() {  
-//   mcp.begin();      // use default address 0
-
-//   mcp.pinMode(0, INPUT);
-//   mcp.pullUp(0, HIGH);  // turn on a 100K pullup internally
-
-//   pinMode(13, OUTPUT);  // use the p13 LED as debugging
-// }
 
 #define GPIA0 0
 #define GPIA1 1
