@@ -1,10 +1,9 @@
 EESchema Schematic File Version 4
-LIBS:charger2-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 7 15
+Sheet 7 17
 Title ""
 Date ""
 Rev ""
@@ -14,58 +13,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Sheet
-S 7450 1050 550  800 
-U 5DC581FA
-F0 "Battery" 50
-F1 "Battery.sch" 50
-F2 "CE" I L 7450 1500 50 
-F3 "CHRG" O L 7450 1750 50 
-F4 "DE" I L 7450 1600 50 
-F5 "VB" O L 7450 1200 50 
-F6 "VD" O L 7450 1300 50 
-F7 "L+" O R 8000 1200 50 
-F8 "L-" O R 8000 1300 50 
-$EndSheet
-$Sheet
-S 7450 2200 550  800 
-U 5DC5D939
-F0 "sheet5DC5D930" 50
-F1 "Battery.sch" 50
-F2 "CE" I L 7450 2650 50 
-F3 "CHRG" O L 7450 2900 50 
-F4 "DE" I L 7450 2750 50 
-F5 "VB" O L 7450 2350 50 
-F6 "VD" O L 7450 2450 50 
-F7 "L+" O R 8000 2350 50 
-F8 "L-" O R 8000 2450 50 
-$EndSheet
-$Sheet
-S 7450 3350 550  800 
-U 5DC5D9F3
-F0 "sheet5DC5D9EA" 50
-F1 "Battery.sch" 50
-F2 "CE" I L 7450 3800 50 
-F3 "CHRG" O L 7450 4050 50 
-F4 "DE" I L 7450 3900 50 
-F5 "VB" O L 7450 3500 50 
-F6 "VD" O L 7450 3600 50 
-F7 "L+" O R 8000 3500 50 
-F8 "L-" O R 8000 3600 50 
-$EndSheet
-$Sheet
-S 7450 4500 550  800 
-U 5DC5DB65
-F0 "sheet5DC5DB5C" 50
-F1 "Battery.sch" 50
-F2 "CE" I L 7450 4950 50 
-F3 "CHRG" O L 7450 5200 50 
-F4 "DE" I L 7450 5050 50 
-F5 "VB" O L 7450 4650 50 
-F6 "VD" O L 7450 4750 50 
-F7 "L+" O R 8000 4650 50 
-F8 "L-" O R 8000 4750 50 
-$EndSheet
 Wire Wire Line
 	4300 2350 6600 2350
 Wire Wire Line
@@ -200,54 +147,6 @@ Text HLabel 2900 2350 0    50   Input ~ 0
 SDA
 Text HLabel 2900 2450 0    50   Input ~ 0
 SCK
-Wire Wire Line
-	9350 3100 8250 3100
-Wire Wire Line
-	8250 3100 8250 2450
-Wire Wire Line
-	8250 2450 8000 2450
-Wire Wire Line
-	8000 3500 8250 3500
-Wire Wire Line
-	8250 3500 8250 3200
-Wire Wire Line
-	8250 3200 9350 3200
-Wire Wire Line
-	9350 3300 8350 3300
-Wire Wire Line
-	8350 3300 8350 3600
-Wire Wire Line
-	8350 3600 8000 3600
-Wire Wire Line
-	8000 2350 8350 2350
-Wire Wire Line
-	8350 2350 8350 3000
-Wire Wire Line
-	8350 3000 9350 3000
-Wire Wire Line
-	9350 3400 8450 3400
-Wire Wire Line
-	8450 3400 8450 4650
-Wire Wire Line
-	8450 4650 8000 4650
-Wire Wire Line
-	8000 4750 8600 4750
-Wire Wire Line
-	8600 4750 8600 3500
-Wire Wire Line
-	8600 3500 9350 3500
-Wire Wire Line
-	9350 2900 8450 2900
-Wire Wire Line
-	8450 2900 8450 1300
-Wire Wire Line
-	8450 1300 8000 1300
-Wire Wire Line
-	8000 1200 8550 1200
-Wire Wire Line
-	8550 1200 8550 2800
-Wire Wire Line
-	8550 2800 9350 2800
 Text HLabel 6100 4250 2    50   Output ~ 0
 VB
 Text HLabel 6100 4650 2    50   Output ~ 0
@@ -303,21 +202,6 @@ Wire Wire Line
 Wire Wire Line
 	6950 3250 4300 3250
 NoConn ~ 4300 3850
-$Comp
-L Connector_Generic:Conn_01x08 J2
-U 1 1 5DC76FC9
-P 9550 3100
-AR Path="/5DC581CC/5DC76FC9" Ref="J2"  Part="1" 
-AR Path="/5DC82B0A/5DC76FC9" Ref="J3"  Part="1" 
-AR Path="/5DE36E4E/5DC76FC9" Ref="J?"  Part="1" 
-AR Path="/5DE37049/5DC76FC9" Ref="J?"  Part="1" 
-F 0 "J3" H 9630 3092 50  0000 L CNN
-F 1 "Conn_01x08" H 9630 3001 50  0000 L CNN
-F 2 "Connector_JST:JST_XH_B8B-XH-A_1x08_P2.50mm_Vertical" H 9550 3100 50  0001 C CNN
-F 3 "~" H 9550 3100 50  0001 C CNN
-	1    9550 3100
-	1    0    0    -1  
-$EndComp
 NoConn ~ 4450 3950
 Wire Wire Line
 	3600 2050 3600 1900
@@ -379,7 +263,7 @@ AR Path="/5DE36E4E/5DC5AB33" Ref="U?"  Part="1"
 AR Path="/5DE37049/5DC5AB33" Ref="U?"  Part="1" 
 F 0 "U12" H 3050 4350 50  0000 C CNN
 F 1 "MCP23017_SS" H 3250 4250 50  0000 C CNN
-F 2 "Package_SO:SSOP-28_5.3x10.2mm_P0.65mm" H 3800 2150 50  0001 L CNN
+F 2 "Package_SO:SOIC-28W_7.5x17.9mm_P1.27mm" H 3800 2150 50  0001 L CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf" H 3800 2050 50  0001 L CNN
 	1    3600 3150
 	1    0    0    -1  
@@ -397,8 +281,8 @@ AR Path="/5DC82B0A/5DC60E58" Ref="U15"  Part="1"
 AR Path="/5DE36E4E/5DC60E58" Ref="U?"  Part="1" 
 AR Path="/5DE37049/5DC60E58" Ref="U?"  Part="1" 
 F 0 "U15" H 5450 5750 50  0000 C CNN
-F 1 "4052" H 5400 5650 50  0000 C CNN
-F 2 "Package_SO:TSSOP-16_4.4x5mm_P0.65mm" H 5600 4850 50  0001 C CNN
+F 1 "74HC4052" H 5400 5650 50  0000 C CNN
+F 2 "Package_SO:SO-16_5.3x10.2mm_P1.27mm" H 5600 4850 50  0001 C CNN
 F 3 "http://www.intersil.com/content/dam/Intersil/documents/cd40/cd4051bms-52bms-53bms.pdf" H 5600 4850 50  0001 C CNN
 	1    5600 4850
 	1    0    0    -1  
@@ -416,4 +300,98 @@ F 3 "" H 5600 3950 50  0001 C CNN
 	1    5600 3950
 	1    0    0    -1  
 $EndComp
+$Comp
+L power:GND #PWR0111
+U 1 1 5F95C640
+P 3600 4250
+AR Path="/5DC581CC/5F95C640" Ref="#PWR0111"  Part="1" 
+AR Path="/5DC82B0A/5F95C640" Ref="#PWR0161"  Part="1" 
+F 0 "#PWR0161" H 3600 4000 50  0001 C CNN
+F 1 "GND" H 3605 4077 50  0000 C CNN
+F 2 "" H 3600 4250 50  0001 C CNN
+F 3 "" H 3600 4250 50  0001 C CNN
+	1    3600 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0112
+U 1 1 5F95EFD1
+P 5050 5200
+AR Path="/5DC581CC/5F95EFD1" Ref="#PWR0112"  Part="1" 
+AR Path="/5DC82B0A/5F95EFD1" Ref="#PWR0162"  Part="1" 
+F 0 "#PWR0162" H 5050 4950 50  0001 C CNN
+F 1 "GND" H 5055 5027 50  0000 C CNN
+F 2 "" H 5050 5200 50  0001 C CNN
+F 3 "" H 5050 5200 50  0001 C CNN
+	1    5050 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5050 5200 5050 5150
+Wire Wire Line
+	5050 5150 5100 5150
+$Sheet
+S 7450 4500 550  800 
+U 5DC5DB65
+F0 "sheet5DC5DB5C" 50
+F1 "Battery.sch" 50
+F2 "CE" I L 7450 4950 50 
+F3 "CHRG" O L 7450 5200 50 
+F4 "DE" I L 7450 5050 50 
+F5 "VB" O L 7450 4650 50 
+F6 "VD" O L 7450 4750 50 
+F7 "TEMP" O R 8000 4900 50 
+$EndSheet
+$Sheet
+S 7450 3350 550  800 
+U 5DC5D9F3
+F0 "sheet5DC5D9EA" 50
+F1 "Battery.sch" 50
+F2 "CE" I L 7450 3800 50 
+F3 "CHRG" O L 7450 4050 50 
+F4 "DE" I L 7450 3900 50 
+F5 "VB" O L 7450 3500 50 
+F6 "VD" O L 7450 3600 50 
+F7 "TEMP" O R 8000 3750 50 
+$EndSheet
+$Sheet
+S 7450 1050 550  800 
+U 5DC581FA
+F0 "Battery" 50
+F1 "Battery.sch" 50
+F2 "CE" I L 7450 1500 50 
+F3 "CHRG" O L 7450 1750 50 
+F4 "DE" I L 7450 1600 50 
+F5 "VB" O L 7450 1200 50 
+F6 "VD" O L 7450 1300 50 
+F7 "TEMP" O R 8000 1400 50 
+$EndSheet
+$Sheet
+S 7450 2200 550  800 
+U 5DC5D939
+F0 "sheet5DC5D930" 50
+F1 "Battery.sch" 50
+F2 "CE" I L 7450 2650 50 
+F3 "CHRG" O L 7450 2900 50 
+F4 "DE" I L 7450 2750 50 
+F5 "VB" O L 7450 2350 50 
+F6 "VD" O L 7450 2450 50 
+F7 "TEMP" O R 8000 2550 50 
+$EndSheet
+Text HLabel 8400 1400 2    50   Output ~ 0
+T1
+Wire Wire Line
+	8400 1400 8000 1400
+Text HLabel 8400 2550 2    50   Output ~ 0
+T2
+Wire Wire Line
+	8400 2550 8000 2550
+Text HLabel 8400 3750 2    50   Output ~ 0
+T3
+Wire Wire Line
+	8400 3750 8000 3750
+Text HLabel 8400 4900 2    50   Output ~ 0
+T4
+Wire Wire Line
+	8400 4900 8000 4900
 $EndSCHEMATC

@@ -1,10 +1,9 @@
 EESchema Schematic File Version 4
-LIBS:charger2-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 15 15
+Sheet 17 17
 Title ""
 Date ""
 Rev ""
@@ -55,7 +54,7 @@ L Device:Rotary_Encoder_Switch SW1
 U 1 1 5DF17C84
 P 9500 3900
 F 0 "SW1" H 9500 4267 50  0000 C CNN
-F 1 "Rotary_Encoder_Switch" H 9500 4176 50  0000 C CNN
+F 1 "Button" H 9500 4176 50  0000 C CNN
 F 2 "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm" H 9350 4060 50  0001 C CNN
 F 3 "~" H 9500 4160 50  0001 C CNN
 	1    9500 3900
@@ -237,11 +236,11 @@ NoConn ~ 3550 3150
 NoConn ~ 3550 3250
 NoConn ~ 3550 4350
 Text HLabel 6200 3650 2    50   Output ~ 0
-D7
+TempS_B
 Wire Wire Line
 	6200 3650 6150 3650
 Text HLabel 6200 3550 2    50   Output ~ 0
-D6
+TempS_A
 Wire Wire Line
 	6200 3550 6150 3550
 Text HLabel 3550 3550 0    50   Output ~ 0
@@ -255,7 +254,7 @@ A2
 Text HLabel 3550 4150 0    50   Output ~ 0
 A1
 Text HLabel 6150 3250 2    50   Output ~ 0
-D3
+FAN_PWM
 NoConn ~ 3550 4950
 Wire Wire Line
 	3150 3850 3550 3850
@@ -268,7 +267,7 @@ P 4850 4050
 AR Path="/5DFF8FDC" Ref="XA1"  Part="1" 
 AR Path="/5DC57FBE/5DFF8FDC" Ref="XA1"  Part="1" 
 F 0 "XA1" H 4850 5287 60  0000 C CNN
-F 1 "Arduino_Nano_Socket" H 4850 5181 60  0000 C CNN
+F 1 "Arduino Nano" H 4850 5181 60  0000 C CNN
 F 2 "arduino:Arduino_Nano_Socket" H 6650 7800 60  0001 C CNN
 F 3 "https://store.arduino.cc/arduino-nano" H 6650 7800 60  0001 C CNN
 	1    4850 4050

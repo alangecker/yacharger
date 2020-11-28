@@ -1,10 +1,9 @@
 EESchema Schematic File Version 4
-LIBS:charger2-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 12 15
+Sheet 12 17
 Title ""
 Date ""
 Rev ""
@@ -69,16 +68,14 @@ $EndComp
 $Comp
 L power:+3.3V #PWR0115
 U 1 1 5DECB868
-P 6200 3250
-F 0 "#PWR0115" H 6200 3100 50  0001 C CNN
-F 1 "+3.3V" H 6215 3423 50  0000 C CNN
-F 2 "" H 6200 3250 50  0001 C CNN
-F 3 "" H 6200 3250 50  0001 C CNN
-	1    6200 3250
+P 6600 3550
+F 0 "#PWR0115" H 6600 3400 50  0001 C CNN
+F 1 "+3.3V" H 6615 3723 50  0000 C CNN
+F 2 "" H 6600 3550 50  0001 C CNN
+F 3 "" H 6600 3550 50  0001 C CNN
+	1    6600 3550
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6200 3250 6200 3400
 Wire Wire Line
 	6600 3850 6800 3850
 $Comp
@@ -228,71 +225,19 @@ Wire Wire Line
 	6600 4600 6800 4600
 Wire Wire Line
 	6600 4400 6800 4400
-$Comp
-L Jumper:Jumper_3_Bridged12 JP2
-U 1 1 5DFC465B
-P 6600 3400
-F 0 "JP2" H 6600 3604 50  0000 C CNN
-F 1 "TFT_VCC" H 6600 3513 50  0000 C CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels" H 6600 3400 50  0001 C CNN
-F 3 "~" H 6600 3400 50  0001 C CNN
-	1    6600 3400
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6600 3550 6600 3850
-Wire Wire Line
-	6350 3400 6200 3400
-$Comp
-L power:+5V #PWR0118
-U 1 1 5DFC80C5
-P 7050 3250
-F 0 "#PWR0118" H 7050 3100 50  0001 C CNN
-F 1 "+5V" H 7065 3423 50  0000 C CNN
-F 2 "" H 7050 3250 50  0001 C CNN
-F 3 "" H 7050 3250 50  0001 C CNN
-	1    7050 3250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7050 3250 7050 3400
-Wire Wire Line
-	7050 3400 6850 3400
 $Comp
 L power:+3.3V #PWR0119
 U 1 1 5DFCCDCD
-P 5800 4750
-F 0 "#PWR0119" H 5800 4600 50  0001 C CNN
-F 1 "+3.3V" H 5815 4923 50  0000 C CNN
-F 2 "" H 5800 4750 50  0001 C CNN
-F 3 "" H 5800 4750 50  0001 C CNN
-	1    5800 4750
+P 6600 4500
+F 0 "#PWR0119" H 6600 4350 50  0001 C CNN
+F 1 "+3.3V" V 6600 4750 50  0000 C CNN
+F 2 "" H 6600 4500 50  0001 C CNN
+F 3 "" H 6600 4500 50  0001 C CNN
+	1    6600 4500
 	0    -1   -1   0   
 $EndComp
-$Comp
-L Jumper:Jumper_3_Bridged12 JP1
-U 1 1 5DFCCDD4
-P 5800 4500
-F 0 "JP1" V 5846 4567 50  0000 L CNN
-F 1 "TFT_BL" V 5755 4567 50  0000 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels" H 5800 4500 50  0001 C CNN
-F 3 "~" H 5800 4500 50  0001 C CNN
-	1    5800 4500
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:+5V #PWR0155
-U 1 1 5DFCCDDB
-P 5800 4250
-F 0 "#PWR0155" H 5800 4100 50  0001 C CNN
-F 1 "+5V" H 5815 4423 50  0000 C CNN
-F 2 "" H 5800 4250 50  0001 C CNN
-F 3 "" H 5800 4250 50  0001 C CNN
-	1    5800 4250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5950 4500 6800 4500
 Text Label 6600 4300 2    50   ~ 0
 3.3_MOSI
 Wire Wire Line
@@ -363,4 +308,6 @@ F 3 "http://www.intersil.com/content/dam/intersil/documents/cd40/cd4050bms.pdf" 
 	7    3250 2550
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	6600 4500 6800 4500
 $EndSCHEMATC

@@ -1,10 +1,9 @@
 EESchema Schematic File Version 4
-LIBS:charger2-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 14 15
+Sheet 14 17
 Title ""
 Date ""
 Rev ""
@@ -255,7 +254,7 @@ L Analog_ADC:ADS1115IDGS U23
 U 1 1 5DC8399E
 P 4750 3700
 F 0 "U23" H 4500 4300 50  0000 C CNN
-F 1 "ADS1115IDGS" H 4450 4200 50  0000 C CNN
+F 1 "ADS1115" H 4450 4200 50  0000 C CNN
 F 2 "Package_SO:TSSOP-10_3x3mm_P0.5mm" H 4750 3200 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/ads1113.pdf" H 4700 2800 50  0001 C CNN
 	1    4750 3700
@@ -322,4 +321,5 @@ F 3 "~" H 7800 4200 50  0001 C CNN
 	1    7800 4200
 	-1   0    0    -1  
 $EndComp
+NoConn ~ 5150 3500
 $EndSCHEMATC

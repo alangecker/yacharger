@@ -1,0 +1,186 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 15 17
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:Q_NMOS_GSD Q?
+U 1 1 5F9743F7
+P 4850 3700
+AR Path="/5DBBB1EF/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DC54FE6/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DC563B3/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DC58B11/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DC59791/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DC5994B/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DC5B1E5/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DC5B1EC/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DC5B1F3/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DC5B1FA/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5E0C52EA/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5E0C52F1/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5E0C52F8/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5E0C5314/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DC581CC/5DC581FA/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DC581CC/5DC5D939/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DC581CC/5DC5D9F3/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DC581CC/5DC5DB65/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DC82B0A/5DC581FA/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DC82B0A/5DC5D939/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DC82B0A/5DC5D9F3/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DC82B0A/5DC5DB65/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DE36E4E/5DC581FA/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DE36E4E/5DC5D939/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DE36E4E/5DC5D9F3/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DE36E4E/5DC5DB65/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DE37049/5DC581FA/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DE37049/5DC5D939/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DE37049/5DC5D9F3/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5DE37049/5DC5DB65/5F9743F7" Ref="Q?"  Part="1" 
+AR Path="/5F970E33/5F9743F7" Ref="Q1"  Part="1" 
+F 0 "Q1" H 5056 3746 50  0000 L CNN
+F 1 "AO3400" H 5056 3655 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 5050 3800 50  0001 C CNN
+F 3 "~" H 4850 3700 50  0001 C CNN
+	1    4850 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J1
+U 1 1 5F9750A5
+P 5750 3200
+F 0 "J1" H 5722 3082 50  0000 R CNN
+F 1 "Fan" H 5722 3173 50  0000 R CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 5750 3200 50  0001 C CNN
+F 3 "~" H 5750 3200 50  0001 C CNN
+	1    5750 3200
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D D2
+U 1 1 5F975DFB
+P 4950 3100
+F 0 "D2" V 4904 3180 50  0000 L CNN
+F 1 "S1B" V 4995 3180 50  0000 L CNN
+F 2 "Diode_SMD:D_SMA" H 4950 3100 50  0001 C CNN
+F 3 "~" H 4950 3100 50  0001 C CNN
+	1    4950 3100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5450 3100 5550 3100
+Wire Wire Line
+	5550 3200 5450 3200
+$Comp
+L power:GND #PWR0224
+U 1 1 5F976EDC
+P 4950 4200
+F 0 "#PWR0224" H 4950 3950 50  0001 C CNN
+F 1 "GND" H 4955 4027 50  0000 C CNN
+F 2 "" H 4950 4200 50  0001 C CNN
+F 3 "" H 4950 4200 50  0001 C CNN
+	1    4950 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 4200 4950 4000
+$Comp
+L Device:R R53
+U 1 1 5F977306
+P 4450 3850
+F 0 "R53" H 4520 3896 50  0000 L CNN
+F 1 "10k" H 4520 3805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 4380 3850 50  0001 C CNN
+F 3 "~" H 4450 3850 50  0001 C CNN
+	1    4450 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4450 4000 4950 4000
+Connection ~ 4950 4000
+Wire Wire Line
+	4950 4000 4950 3900
+Wire Wire Line
+	4450 3700 4650 3700
+Connection ~ 4450 3700
+Text HLabel 3850 3700 0    50   Input ~ 0
+FAN_PWM
+Wire Wire Line
+	3850 3700 4450 3700
+Wire Wire Line
+	4950 2800 5450 2800
+Wire Wire Line
+	5450 2800 5450 3100
+Connection ~ 4950 2800
+Wire Wire Line
+	4950 2800 4950 2950
+Wire Wire Line
+	4950 2550 4950 2800
+Wire Wire Line
+	4950 3400 5450 3400
+Wire Wire Line
+	5450 3200 5450 3400
+Wire Wire Line
+	4950 3250 4950 3400
+Wire Wire Line
+	4950 3400 4950 3500
+Connection ~ 4950 3400
+$Comp
+L power:VCC #PWR?
+U 1 1 5FC55F14
+P 4950 2550
+AR Path="/5DC9287F/5FC55F14" Ref="#PWR?"  Part="1" 
+AR Path="/5F970E33/5FC55F14" Ref="#PWR0118"  Part="1" 
+F 0 "#PWR0118" H 4950 2400 50  0001 C CNN
+F 1 "VCC" H 4967 2723 50  0000 C CNN
+F 2 "" H 4950 2550 50  0001 C CNN
+F 3 "" H 4950 2550 50  0001 C CNN
+	1    4950 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5FC70119
+P 6600 2250
+AR Path="/5DC9287F/5FC70119" Ref="#PWR?"  Part="1" 
+AR Path="/5F970E33/5FC70119" Ref="#PWR0155"  Part="1" 
+F 0 "#PWR0155" H 6600 2100 50  0001 C CNN
+F 1 "VCC" H 6617 2423 50  0000 C CNN
+F 2 "" H 6600 2250 50  0001 C CNN
+F 3 "" H 6600 2250 50  0001 C CNN
+	1    6600 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0223
+U 1 1 5FC70C4F
+P 6600 2450
+F 0 "#PWR0223" H 6600 2200 50  0001 C CNN
+F 1 "GND" H 6605 2277 50  0000 C CNN
+F 2 "" H 6600 2450 50  0001 C CNN
+F 3 "" H 6600 2450 50  0001 C CNN
+	1    6600 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C26
+U 1 1 5FC720B4
+P 6600 2350
+F 0 "C26" H 6692 2396 50  0000 L CNN
+F 1 "10u" H 6692 2305 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 6600 2350 50  0001 C CNN
+F 3 "~" H 6600 2350 50  0001 C CNN
+	1    6600 2350
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

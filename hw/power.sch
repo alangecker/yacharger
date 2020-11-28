@@ -1,10 +1,9 @@
 EESchema Schematic File Version 4
-LIBS:charger2-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 13 15
+Sheet 13 17
 Title ""
 Date ""
 Rev ""
@@ -30,7 +29,7 @@ L Device:Fuse F1
 U 1 1 5DC9329D
 P 2650 1750
 F 0 "F1" V 2453 1750 50  0000 C CNN
-F 1 "Fuse" V 2544 1750 50  0000 C CNN
+F 1 "10A" V 2544 1750 50  0000 C CNN
 F 2 "Fuse:Fuse_Blade_ATO_directSolder" V 2580 1750 50  0001 C CNN
 F 3 "~" H 2650 1750 50  0001 C CNN
 	1    2650 1750
@@ -63,14 +62,10 @@ Wire Wire Line
 Wire Wire Line
 	3750 1750 3550 1750
 Wire Wire Line
-	2500 1750 2100 1750
-Wire Wire Line
 	3350 1750 3100 1750
 Wire Wire Line
 	3100 1600 3100 1750
 Connection ~ 3100 1750
-Wire Wire Line
-	3100 1750 2800 1750
 $Comp
 L power:GND #PWR0201
 U 1 1 5DC95926
@@ -209,4 +204,8 @@ F 3 "~" H 4300 1750 50  0001 C CNN
 	1    4300 1750
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	2800 1750 3100 1750
+Wire Wire Line
+	2500 1750 2100 1750
 $EndSCHEMATC
