@@ -53,7 +53,7 @@ AR Path="/5DE37049/5F9D1585" Ref="U?"  Part="1"
 AR Path="/5F9D0D24/5F9D1585" Ref="U4"  Part="1" 
 F 0 "U4" H 4150 4000 50  0000 C CNN
 F 1 "74HC4052" H 4100 3900 50  0000 C CNN
-F 2 "Package_SO:SO-16_5.3x10.2mm_P1.27mm" H 4300 3100 50  0001 C CNN
+F 2 "Package_SO:SO-16_3.9x9.9mm_P1.27mm" H 4300 3100 50  0001 C CNN
 F 3 "http://www.intersil.com/content/dam/Intersil/documents/cd40/cd4051bms-52bms-53bms.pdf" H 4300 3100 50  0001 C CNN
 	1    4300 3100
 	1    0    0    -1  
