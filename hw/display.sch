@@ -219,10 +219,8 @@ Text Label 6600 4200 2    50   ~ 0
 3.3_RS
 Wire Wire Line
 	6600 4200 6800 4200
-Text HLabel 6600 4600 0    50   Output ~ 0
+Text HLabel 5200 4600 0    50   Output ~ 0
 MISO
-Wire Wire Line
-	6600 4600 6800 4600
 Wire Wire Line
 	6600 4400 6800 4400
 Wire Wire Line
@@ -310,4 +308,72 @@ F 3 "http://www.intersil.com/content/dam/intersil/documents/cd40/cd4050bms.pdf" 
 $EndComp
 Wire Wire Line
 	6600 4500 6800 4500
+$Comp
+L 74xGxx:74LVC1G17 U6
+U 1 1 5FE72031
+P 5600 4800
+F 0 "U6" H 5450 4950 50  0000 C CNN
+F 1 "74LVC1G17" H 5350 4600 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 5600 4800 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 5600 4800 50  0001 C CNN
+	1    5600 4800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 5FE78A44
+P 5600 5050
+F 0 "#PWR06" H 5600 4800 50  0001 C CNN
+F 1 "GND" H 5605 4877 50  0000 C CNN
+F 2 "" H 5600 5050 50  0001 C CNN
+F 3 "" H 5600 5050 50  0001 C CNN
+	1    5600 5050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 5050 5600 4900
+$Comp
+L Device:Jumper_NC_Small JP1
+U 1 1 5FE7E428
+P 5600 4250
+F 0 "JP1" H 5600 4462 50  0000 C CNN
+F 1 "MISO_JMP" H 5600 4371 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 5600 4250 50  0001 C CNN
+F 3 "~" H 5600 4250 50  0001 C CNN
+	1    5600 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 4800 5900 4600
+Wire Wire Line
+	5900 4250 5700 4250
+Wire Wire Line
+	5300 4800 5300 4600
+Wire Wire Line
+	5300 4250 5500 4250
+Wire Wire Line
+	5350 4800 5300 4800
+$Comp
+L power:+5V #PWR05
+U 1 1 5FE89286
+P 5600 4650
+F 0 "#PWR05" H 5600 4500 50  0001 C CNN
+F 1 "+5V" H 5615 4823 50  0000 C CNN
+F 2 "" H 5600 4650 50  0001 C CNN
+F 3 "" H 5600 4650 50  0001 C CNN
+	1    5600 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 4650 5600 4700
+Wire Wire Line
+	5200 4600 5300 4600
+Connection ~ 5300 4600
+Wire Wire Line
+	5300 4600 5300 4250
+Wire Wire Line
+	5900 4600 6800 4600
+Connection ~ 5900 4600
+Wire Wire Line
+	5900 4600 5900 4250
 $EndSCHEMATC
