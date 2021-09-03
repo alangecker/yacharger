@@ -22,6 +22,8 @@ Adafruit_MCP23017 mcp0, mcp1;
 
 #define MUX4052_S0 GPIA4 // A
 #define MUX4052_S1 GPIA5 // B
+#define TEMP_MUX4052_S0 6 // A -> D6
+#define TEMP_MUX4052_S1 7 // B -> D7
 
 uint8_t getChargeEnablePin(uint8_t slotNumber) {
   slotNumber %= 4;
@@ -82,16 +84,19 @@ void mcp23017_init(Adafruit_MCP23017 *mcp) {
 }
 
 void gpio_setup() {
-  mcp0.begin(); //0b0100000
+  mcp0.begin();
   mcp23017_init(&mcp0);
 
-  mcp1.begin(0b0100010);
+  mcp1.begin(0b010);
   mcp23017_init(&mcp1);
 
   for(int i=0;i<8;i++) {
     gpio_chargeStop(i);
     gpio_dischargeStop(i);
   }
+
+  pinMode(TEMP_MUX4052_S0, OUTPUT);
+  pinMode(TEMP_MUX4052_S1, OUTPUT);;
 }
 
 
@@ -121,7 +126,14 @@ void gpio_setAnalogMultiplexerChannel(uint8_t slotNumber) {
   Adafruit_MCP23017 *mcp = slotNumber < 4 ? &mcp0 : &mcp1;
   slotNumber %= 4;
 
-  mcp->digitalWrite(MUX4052_S0, slotNumber & 0b0 ? HIGH : LOW);
-  mcp->digitalWrite(MUX4052_S1, slotNumber & 0b10 ? HIGH : LOW);
-  delayMicroseconds(10); // maybe unnecessary?
+  mcp->digitalWrite(MUX4052_S0, (slotNumber == 1 || slotNumber == 3) ? HIGH : LOW);
+  mcp->digitalWrite(MUX4052_S1, (slotNumber == 2 || slotNumber == 3) ? HIGH : LOW);
+  delayMicroseconds(30);
+}
+
+void gpio_setTempMultiplexerChannel(uint8_t slotNumber) {
+  slotNumber %= 4;
+  digitalWrite(TEMP_MUX4052_S0, (slotNumber == 1 || slotNumber == 3) ? HIGH : LOW);
+  digitalWrite(TEMP_MUX4052_S1, (slotNumber == 2 || slotNumber == 3) ? HIGH : LOW);
+  delayMicroseconds(30);
 }

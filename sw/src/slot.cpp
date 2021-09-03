@@ -1,5 +1,6 @@
 #include "slot.h"
 #include "adc.h"
+#include "consts.h"
 
 #define MILLISECONDS_PER_HOUR ((uint32_t)1000*60*60)
 #define RESISTANCE_OFFSET 0 // mOhm, The Drain-Source On-State Resistance of the Discharge Mosfet
@@ -13,7 +14,18 @@ void slot_print(uint8_t slotNumber, char* str) {
 
 void slot_tick(uint8_t slotNumber, SlotState *state) {
     state->voltage = adc_readVoltage(slotNumber);
-    
+
+#ifdef TEMP_ENABLED
+    state->tempCurrent = adc_readTemp(slotNumber);
+    if(state->tempMaximum < state->tempCurrent) state->tempMaximum = state->tempCurrent;
+
+    if(state->tempCurrent > MAX_TEMPERATURE && state->state != STATE_FAULT) {
+        state->state = STATE_FAULT;
+        state->fault = FAULT_HIGH_TEMPERATURE;
+        slot_print(slotNumber, "Fault: too high temperature");
+    }
+#endif    
+
     if(state->state != STATE_WAIT && state->voltage < MIN_INITIAL_VOLTAGE) {
         state->current = 0;
         gpio_chargeStop(slotNumber);
@@ -23,7 +35,7 @@ void slot_tick(uint8_t slotNumber, SlotState *state) {
 
     switch(state->state) {
 
-        // waiting for a battery
+        // waiting for a battery    if(state->tempMaximum < state->tempCurrent) state->tempMaximum = state->tempCurrent;
         case STATE_WAIT:
             if(state->voltage > MIN_INITIAL_VOLTAGE) {
                 state->state = STATE_INSERTED_SETTLE;
@@ -36,8 +48,8 @@ void slot_tick(uint8_t slotNumber, SlotState *state) {
         case STATE_INSERTED_SETTLE: 
             // reset values
 #ifdef TEMP_ENABLED
-            state->tempInitial = 0;
-            state->tempMaximum = 0;
+            // state->tempInitial = state->tempCurrent;
+            // state->tempMaximum = state->tempCurrent;
 #endif
             state->current = 0;
             state->chargedCharge = 0;
@@ -78,6 +90,7 @@ void slot_tick(uint8_t slotNumber, SlotState *state) {
                 unsigned long newTime = millis();
 
                 // count charge & energy
+                // state->voltage += -state->current*(REVERSE_POL_MOSFET_RDS_ON+CONTACTS_RESISTANCE)/1000.0;
                 state->chargedCharge += ((double)state->current)*(newTime-state->lastTime)/MILLISECONDS_PER_HOUR;
                 state->chargedEnergy += ((double)state->current)*state->voltage*(newTime-state->lastTime)/MILLISECONDS_PER_HOUR;
                 state->lastTime = newTime;
@@ -110,19 +123,21 @@ void slot_tick(uint8_t slotNumber, SlotState *state) {
                 // we delay the measurement a bit after turning off the TP4056 chip
                 state->cycleCount++;
             } else {
-                float startVoltage = state->voltage;
 
-                gpio_dischargeStart(slotNumber);
-                delay(50);
-                state->current = adc_readCurrent(slotNumber);
-                state->voltage = adc_readVoltage(slotNumber);
-                gpio_dischargeStop(slotNumber);
-
-                // float voltageDrop = startVoltage - state->voltage;
+                float totalResistance = 0;
+                float startVoltage;
+                for(int i=0;i<3;i++) {
+                    startVoltage = state->voltage;
+                    gpio_dischargeStart(slotNumber);
+                    delay(50);
+                    state->current = adc_readCurrent(slotNumber);
+                    state->voltage = adc_readVoltage(slotNumber);
+                    gpio_dischargeStop(slotNumber);
+                    totalResistance += (startVoltage - state->voltage)/(-state->current) * 1000; // mOhm
+                    if(i != 2) delay(200);
+                }
                 
-                float resistance = 7.5; // TODO: define individually for each resistor
-
-                state->internalResistance = (resistance * (startVoltage / state->voltage) - resistance) * 1000; // mOhm
+                state->internalResistance = totalResistance/3 - REVERSE_POL_MOSFET_RDS_ON - CONTACTS_RESISTANCE;
                 Serial.print("R_i: ");
                 Serial.println(state->internalResistance);
                 if(state->internalResistance > 9999)  state->internalResistance = 9999;
@@ -148,6 +163,10 @@ void slot_tick(uint8_t slotNumber, SlotState *state) {
                 // normal discharging loop
                 state->current = adc_readCurrent(slotNumber);
 
+                // calculate in the voltage drop acros the reverse polarity mosfet
+                state->voltage += -state->current*(REVERSE_POL_MOSFET_RDS_ON+CONTACTS_RESISTANCE)/1000.0;
+                
+    
                 unsigned long newTime = millis();
 
                 // count charge & energy

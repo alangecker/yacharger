@@ -3,7 +3,7 @@
 #include "Adafruit_ILI9341.h"
 #include "Arduino.h"
 
-#define SLOT_X(i) SLOT_WIDTH*(i % 4)
+#define SLOT_X(i) (SLOT_WIDTH*(i % 4))
 #define SLOT_Y(i) (i < 4 ? 14 : 120)
 
 #define DISP_Y_VOLTAGE 2
@@ -21,7 +21,7 @@
 
 struct displayedSlotState {
     uint8_t state = 0;
-    float tempCurrent = -1;
+    int8_t tempCurrent = -1;
     float current = -1;
     float voltage = -1;
     int chargedCharge = -1; // in mAh 
@@ -132,9 +132,14 @@ void draw_int(int val, uint16_t x, uint16_t y) {
         return;
     }
     uint8_t padding = 0;
-    if(val < 1000) padding++;
-    if(val < 100) padding++;
-    if(val < 10) padding++;
+    if(val >= 0) {
+        if(val < 1000) padding++;
+        if(val < 100) padding++;
+        if(val < 10) padding++;
+    } else {
+        if(val > -100) padding++;
+        if(val > -10) padding++;
+    }
     tft.setCursor(x+padding*12, y);
     tft.print(val);
 }
@@ -212,7 +217,7 @@ void display_update_slot(uint8_t slotNumber, SlotState *state) {
     // Serial.println("display_update_slot");
     if(state->state != last->state) {
         // Serial.println("display_update_slot::newstate");
-        Serial.println(state->state);
+        // Serial.println(state->state);
         if(!last->state || last->state == STATE_FAULT || last->state == STATE_DONE) {
             tft.fillRect(SLOT_X(slotNumber), SLOT_Y(slotNumber)+DISP_Y_VOLTAGE, SLOT_WIDTH-1, 45, ILI9341_BLACK);
             draw_units_default(slotNumber, state);

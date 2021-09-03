@@ -7,8 +7,6 @@
 
 
 // #define BARCODE_ENABLE
-// #define TEMP_ENABLED
-
 
 #define TFT_DC 9
 #define TFT_CS 10
@@ -31,8 +29,7 @@
 #define MIN_EFFICIENCY 0.7
 
 #define MAX_VOLTAGE 4.22
-// #define DISCHARGE_CUTOFF_VOLTAGE 3.1
-#define DISCHARGE_CUTOFF_VOLTAGE 3.7
+#define DISCHARGE_CUTOFF_VOLTAGE 3.1
 
 
 #define CHARGING_TIMEOUT 2*3600 // seconds
@@ -40,6 +37,27 @@
 #define ADS_LOWER_CHANNELS 0
 #define ADS_HIGHER_CHANNELS 1
 
+#define TEMP_ENABLED
+#define TEMP_PIN_A A7
+#define TEMP_PIN_B A6
+#define TEMP_DIVIDER_RESISTOR 47 // kOhm
+#define TEMP_NTC_NOMINAL_RES 47 // kOhm
+#define TEMP_NTC_NOMINAL_TEMP (25 + 273.15) // Kelvin
+#define TEMP_NTC_B_VALUE 4090
+
+#define LOAD_RESISTANCE 3.8 // ohm
+#define REVERSE_POL_MOSFET_RDS_ON 25 // mOhm
+#define CONTACTS_RESISTANCE 20 // mOhm
+
+
+#define SHUNT_RES_0 20.66 // mOhm
+#define SHUNT_RES_1 20.34 // mOhm
+#define SHUNT_RES_2 20.60 // mOhm
+#define SHUNT_RES_3 20.43 // mOhm
+#define SHUNT_RES_4 20.45 // mOhm
+#define SHUNT_RES_5 20.53 // mOhm
+#define SHUNT_RES_6 20.61 // mOhm
+#define SHUNT_RES_7 20.56 // mOhm
 
 
 #define COLOR_WAIT ILI9341_DARKGREY

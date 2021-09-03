@@ -9,9 +9,9 @@ struct SlotState {
     uint32_t cycleCount = 0;
 
 #ifdef TEMP_ENABLED
-    float tempInitial;
-    float tempMaximum;
-    float tempCurrent;
+    int8_t tempInitial;
+    int8_t tempMaximum;
+    int8_t tempCurrent;
 #endif
 
     float current;
